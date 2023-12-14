@@ -9,16 +9,8 @@ struct Sea
 	double salinity = 0;
 };
 
-int main()
+void getSeas(std::ifstream& file, std::string& parameter, Sea& sea)
 {
-    setlocale(LC_ALL, "ru");
-    Sea sea;
-	std::ifstream file("input.txt");
-	std::string parameter;
-	if (!file.is_open())
-	{
-		std::cerr << "Не удалось открыть файл." << std::endl;
-	}
 	int i = 0;
 	while (file >> parameter)
 	{
@@ -44,5 +36,23 @@ int main()
 			std::cout << std::endl;
 		}
 	}
+}
+
+void checkFile(std::ifstream& file)
+{
+	if (!file.is_open())
+	{
+		std::cerr << "Не удалось открыть файл." << std::endl;
+	}
+}
+
+int main()
+{
+    setlocale(LC_ALL, "ru");
+    Sea sea;
+	std::ifstream file("input.txt");
+	checkFile(file);
+	std::string parameter;
+	getSeas(file, parameter, sea);
 }
 
