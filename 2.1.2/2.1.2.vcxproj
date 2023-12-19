@@ -127,7 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\2.1.1\main.cpp" />
+    <ClCompile Include="..\2.1.1\main1.cpp" />
+    <ClCompile Include="qqq.cpp" />
+    <ClCompile Include="Sea.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sea.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
